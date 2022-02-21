@@ -1,0 +1,124 @@
+{% extends 'index.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block page_title %}
+    Manage Profile
+{% endblock %}
+
+{% block extra_css %}
+    <style>
+        .select2-container{
+            width: 100% !important;
+            max-width: 100%;
+        }
+
+        .add-row {
+            margin-left: 15px;
+        }
+
+        .error-div {
+            color: #a94442;
+            padding: 10px;
+            border: 1px solid #a94442;
+            border-radius: 5px;
+            font-size: 15px;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .success-div {
+            color: #08a900;
+            padding: 10px;
+            border: 1px solid #08a900;
+            border-radius: 5px;
+            font-size: 15px;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+
+    <style>
+        .select2-result-repository {
+            padding-top: 4px;
+            padding-bottom: 3px;
+            display: flex
+        }
+
+        .select2-result-repository__avatar {
+            float: left;
+            width: 40px;
+            margin-right: 10px
+        }
+
+        .select2-result-repository__avatar img {
+            width: 100%;
+            height: auto;
+            border-radius: 2px;
+            border: 1px solid gray
+        }
+
+        .select2-result-repository__title {
+            color: black;
+            font-weight: 700;
+            word-wrap: break-word;
+            line-height: 1.1;
+            margin-bottom: 4px
+        }
+
+        .select2-result-repository__description {
+            font-size: 13px;
+            color: #777;
+            margin-top: 4px;
+        }
+
+        .select2-results__option--highlighted {
+            background-color: #ededed !important;
+            color: #000 !important;
+        }
+
+        /* .select2-results__option--highlighted .select2-result-repository__title {
+            color: white;
+        }
+
+        .select2-results__option--highlighted .select2-result-repository__description {
+            color: #c6dcef;
+        } */
+
+        .add-new-button, .remove-form-button {
+            font-weight: bold !important;
+        }
+    </style>
+{% endblock %}
+
+
+{% block content_header %}
+    <div class="row m-0 mb-2">
+        <div class="col-sm-10 align-self-sm-end">
+            <h1 style="color:#003366;">Add/Edit Profile</h1>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                Create Profile
+            </div>
+            <div class="card-body">
+                <form method="post">
+                    {% csrf_token %}
+                    {{form|crispy}}
+                    <button class="btn btn-success" type="submit">Next</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block extra_js %}
+
+{% endblock %}
