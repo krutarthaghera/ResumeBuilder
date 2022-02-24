@@ -6,6 +6,7 @@ from resumes.models import UserEducation, UserProfessionalExpr, UserProjects, Us
 admin.site.register(Level)
 admin.site.register(Label)
 admin.site.register(SkillLevel)
+admin.site.register(Skills)
 
 
 class SkillInline(admin.TabularInline):

@@ -1,6 +1,9 @@
 from datetime import datetime
+
+from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.forms import inlineformset_factory
+from django.views.generic import TemplateView
 
 from core.models import User, State
 from resumes.forms.userLink import LinkFormSet
@@ -27,14 +30,30 @@ class CreateProfileView(FormView):
         return super(CreateProfileView, self).form_valid(form)
 
 
-class CreateSkillView(FormView):
+class CreateSkillView(CreateView):
     template_name = 'Profiles/profile_management.html'
     form_class = SkillForm
     success_url = reverse_lazy('add_professionalexpr')
 
+    def get_context_data(self, **kwargs):
+        context = super(CreateSkillView, self).get_context_data(**kwargs)
+        if self.request.POST:
+            context['skills_form'] = SkillFormSet(self.request.POST)
+        else:
+            context['skills_form'] = SkillFormSet()
+        return context
+
     def form_valid(self, form):
-        form.save()
-        return super(CreateSkillView, self).form_valid(form)
+        context = self.get_context_data()
+        skills_form = context['skills_form']
+        if skills_form.is_valid():
+            import pdb
+            pdb.set_trace()
+            self.object = form.save()
+            skills_form.instance = self.object
+            skills_form.save()
+            return HttpResponseRedirect('add_professionalexpr')
+
 
 
 class CreateProfessionalExprView(FormView):

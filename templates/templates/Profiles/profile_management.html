@@ -109,42 +109,24 @@
             <div class="card-body">
                 <form method="post">
                     {% csrf_token %}
-                    {% if  skills_form %}
-                        <div class="inline-form">
-                            {{ skills_form | crispy }}
-                        </div>
-                    {% else %}
-                        {{ form | crispy }}
-                    {% endif %}
+                    {{form|crispy}}
                     <button class="btn btn-success" type="submit">Next</button>
                 </form>
-
 
             </div>
         </div>
     </div>
 {% endblock %}
 
+
 {% block extra_js %}
-    <!-- jQuery -->
-    <script src="{% static 'jquery/jquery.min.js' %}"></script>
-    <script type="application/javascript" src="{% static 'js/jquery.formset.js' %}"></script>
-
-    <script>
-        //$(document).ready(function () {
-            //$(document).on('submit', 'form', function (e) {
-                //$(this).find('button').attr('disabled', 'disabled');
-            //});
-        //});
-
-        $('.inline-form').formset({
-            addText: 'Add Skill',
-            addCssClass: 'btn btn-primary',
-            deleteCssClass: 'btn btn-danger fa fa-trash bg-red formset-delete-btn',
-            deleteText: '',
-            prefix: 'skills_set',
-            formCssClass: 'skill-inline-form',
-        });
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js">
+</script>
+<script type="text/javascript">
+    $('form').formset({
+        addText: 'add another',
+        deleteText: 'remove'
+    });
+</script>
 
 {% endblock %}

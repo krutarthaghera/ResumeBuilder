@@ -1,5 +1,5 @@
 {% extends 'index.html' %}
-
+{% load static %}
 {% block title %}
     Dashboard
 {% endblock %}
@@ -7,9 +7,9 @@
 {% block content_header %}
     <div class="row mb-2">
         <div class="col-sm-6">
-            <h1>
-                Dashboard
-            </h1>
+{#            <h1>#}
+{#                Dashboard#}
+{#            </h1>#}
         </div>
 
         <div class="col-sm-6 text-right">
@@ -18,12 +18,74 @@
     </div>
 {% endblock %}
 
-
 {% block content %}
 
-    <h3>Welcome!!</h3>
+
+{#{% endblock %}#}
+{##}
+{#{% block content %}#}
+<div class="home__hero-main-content">
+  <h1 class="home__hero-main-title">Online resume builder</h1>
+  <h2 class="home__hero-title">Only 2% of resumes make it past the first round. Be in the top 2%</h2>
+  <p class="home__hero-subtitle">Use professional field-tested resume templates that follow the exact ‘resume rules’ employers look for. Easy to use and done within minutes - try now for free! </p>
+  <div class="home__hero-cta">
+    <div class="home__hero-button">
+      <a class="home__button button" data-internal-event="{&quot;name&quot;:&quot;click_create_resume&quot;,&quot;label&quot;:&quot;home&quot;}" Create My Resume</a>
+    </div>
+  </div>
+</div>
+
+    <h3></h3>
+<!-- small box -->
+            <div class="small-box bg-warning">
+              <div class="inner">
+                <h3>Create Resume</h3>
+
+                <p>User Registrations</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-person-add"></i>
+              </div>
+              <a href="profiles/add/" class="small-box-footer">Get Started <i class="fas fa-arrow-circle-right"></i></a>
+
+            </div>
+<div class="row">
+
+
+    <div class="card" style="width: 18rem;">
+  <img src="{% static 'img/win.jpg' %}" class="card-img-top" alt="...">
+  <div class="card-body">
+  <p>
+    <strong class="home-resume-maker__feature-title">Make a resume that wins interviews</strong>
+  </p> Use our resume maker with its advanced creation tools to tell a professional story that engages recruiters, hiring managers and even CEOs. </p></p>
+</div>
+
+
+
+  <img src="{% static 'img/easy.png' %}" class="card-img-top" alt="...">
+    <div class="card-body">
+  <p>
+    <strong class="home-resume-maker__feature-title">Resume writing made easy</strong>
+  </p> Resume writing has never been this effortless. Pre-generated text, visual designs and more - all already integrated into the resume maker. Just fill in your details. </p></p>
+</div>
+
+
+
+  <img src="{% static 'img/tool.jpg' %}" class="card-img-top" alt="...">
+    <div class="card-body">
+  <p>
+    <strong class="home-resume-maker__feature-title">A recruiter-tested CV maker tool</strong>
+  </p> Our resume builder and its pre-generated content are tested by recruiters and IT experts. We help your CV become truly competitive in the hiring process. </p></p>
+</div>
+
+    </div>
+
+
+
 
 {% endblock %}
+
+
 
 
 {% block extra_js %}
