@@ -65,7 +65,7 @@ class User(AbstractUser):
     def __str__(self):
         if self.first_name and self.last_name:
             return str(self.first_name + " " + self.last_name)
-        return str(self.email)
+        return self.email
 
 
 class SoftDeletionQuerySet(QuerySet):

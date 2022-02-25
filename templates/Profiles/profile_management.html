@@ -109,21 +109,34 @@
             <div class="card-body">
                 <form method="post">
                     {% csrf_token %}
-                    {% if  skills_form %}
-                        <div class="inline-form">
-                            {{ skills_form | crispy }}
+                    {{form|crispy}}
+                    <div class="user_skills">
+                    {{user_skills|crispy}}
+                    </div>
+                    <div class="user_professional_expr">
+                        {{user_professional_expr|crispy}}
                         </div>
-                    {% else %}
-                        {{ form | crispy }}
-                    {% endif %}
-                    <button class="btn btn-success" type="submit">Next</button>
-                </form>
+                    <div class="user_education">
+                        {{user_education|crispy}}
+                        </div>
+                    <div class="user_projects">
+                        {{user_projects|crispy}}
+                        </div>
+                    <div class="user_language">
+                        {{user_language|crispy}}
+                        </div>
+                    <div class="user_link">
+                        {{user_link|crispy}}
+                        </div>
 
+                    <button class="btn btn-success" type="submit">Submit</button>
+                </form>
 
             </div>
         </div>
     </div>
 {% endblock %}
+
 
 {% block extra_js %}
     <!-- jQuery -->
@@ -137,7 +150,47 @@
             //});
         //});
 
-        $('.inline-form').formset({
+        $('.user_skills').formset({
+            addText: 'Add Skill',
+            addCssClass: 'btn btn-primary',
+            deleteCssClass: 'btn btn-danger fa fa-trash bg-red formset-delete-btn',
+            deleteText: '',
+            prefix: 'skills_set',
+            formCssClass: 'skill-inline-form',
+        });
+        $('.user_professional_expr').formset({
+            addText: 'Add Skill',
+            addCssClass: 'btn btn-primary',
+            deleteCssClass: 'btn btn-danger fa fa-trash bg-red formset-delete-btn',
+            deleteText: '',
+            prefix: 'skills_set',
+            formCssClass: 'skill-inline-form',
+        });
+        $('.user_education').formset({
+            addText: 'Add Skill',
+            addCssClass: 'btn btn-primary',
+            deleteCssClass: 'btn btn-danger fa fa-trash bg-red formset-delete-btn',
+            deleteText: '',
+            prefix: 'skills_set',
+            formCssClass: 'skill-inline-form',
+        });
+        $('.user_projects').formset({
+            addText: 'Add Skill',
+            addCssClass: 'btn btn-primary',
+            deleteCssClass: 'btn btn-danger fa fa-trash bg-red formset-delete-btn',
+            deleteText: '',
+            prefix: 'skills_set',
+            formCssClass: 'skill-inline-form',
+        });
+        $('.user_language').formset({
+            addText: 'Add Skill',
+            addCssClass: 'btn btn-primary',
+            deleteCssClass: 'btn btn-danger fa fa-trash bg-red formset-delete-btn',
+            deleteText: '',
+            prefix: 'skills_set',
+            formCssClass: 'skill-inline-form',
+        });
+        $('.user_link').formset({
             addText: 'Add Skill',
             addCssClass: 'btn btn-primary',
             deleteCssClass: 'btn btn-danger fa fa-trash bg-red formset-delete-btn',

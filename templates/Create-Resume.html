@@ -1,0 +1,179 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html style="font-size: 16px;">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Online resume builder, ​Resume Templates for Every Career Path.">
+    <meta name="description" content="">
+    <meta name="page_type" content="np-template-header-footer-from-plugin">
+    <title>Home</title>
+       <link rel="stylesheet"
+              href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        <!-- Ionicons -->
+        <link rel="stylesheet" type="text/css" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+        <!-- Theme style -->
+        <link rel="stylesheet" type="text/css" href="{% static 'css/adminlte.min.css' %}">
+        <!-- overlayScrollbars -->
+        <link rel="stylesheet" type="text/css"
+              href="{% static 'css/overlayScrollbars/OverlayScrollbars.min.css' %}">
+    <link rel="stylesheet" href="{% static "css/nicepage.css" %}" media="screen">
+    <link rel="stylesheet" href="{% static "css/Home.css" %}" media="screen">
+    <script class="u-script" type="text/javascript" src="{% static "jquery-1.9.1.min.js" %}" defer=></script>
+    <script class="u-script" type="text/javascript" src="{% static "nicepage.js" %}" defer=""></script>
+    <meta name="generator" content="Nicepage 4.5.6, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    
+    
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "",
+		"logo": "images/logo.jpeg"
+}</script>
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="Create Resume">
+    <meta property="og:type" content="website">
+  </head>
+  <body class="u-body u-xl-mode"><header class="u-clearfix u-header u-header" id="sec-3d9b"><div class="u-clearfix u-sheet u-sheet-1">
+        <a href="{% url 'dashboard' %}" class="u-image u-logo u-image-1" data-image-width="670" data-image-height="670">
+          <img src="{% static "images/logo.jpeg" %}" class="u-logo-image u-logo-image-1">
+        </a>
+         <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
+          <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px;">
+            <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
+              <svg class="u-svg-link" viewBox="0 0 24 24"><use xlink:href="#menu-hamburger"></use></svg>
+              <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
+</g></svg>
+            </a>
+          </div>
+          <div class="u-custom-menu u-nav-container">
+            <ul class="u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="{% url 'dashboard'%}" style="padding: 10px 20px;">Home</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="{% url 'add_profile'%}" style="padding: 10px 20px;">Create Resume</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="{% url 'templates'%}" style="padding: 10px 20px;">Templates</a>
+</li></ul>
+          </div>
+
+        </nav>
+      </div></header> 
+    <section class="u-align-center u-clearfix u-section-1" id="sec-3225">
+      <div class="u-align-left u-clearfix u-sheet u-sheet-1">
+
+              <div class="container">
+        <div class="card">
+            <div class="card-header">
+                Create Profile
+            </div>
+            <div class="card-body">
+                <form method="post">
+                    {% csrf_token %}
+                    {{form|crispy}}
+                    <div class="user_skills">
+                    {{user_skills|crispy}}
+                    </div>
+                    <div class="user_professional_expr">
+                        {{user_professional_expr|crispy}}
+                        </div>
+                    <div class="user_education">
+                        {{user_education|crispy}}
+                        </div>
+                    <div class="user_projects">
+                        {{user_projects|crispy}}
+                        </div>
+                    <div class="user_language">
+                        {{user_language|crispy}}
+                        </div>
+                    <div class="user_link">
+                        {{user_link|crispy}}
+                        </div>
+
+                    <button class="btn btn-success" type="submit">Submit</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+      </div>
+    </section>
+    
+    
+    <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-bd2e"><div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-small-text u-text u-text-variant u-text-1">Copyright © 2022&nbsp;<a href="https://adminlte.io/" class="u-active-none u-border-none u-btn u-button-style u-hover-none u-none u-text-palette-1-base u-btn-1">Krutarth Aghera</a>.&nbsp;All rights reserved.
+        </p>
+      </div></footer>
+    <section class="u-backlink u-clearfix u-grey-80">
+      <a class="u-link" href="https://nicepage.com/website-templates" target="_blank">
+        <span>Website Templates</span>
+      </a>
+      <p class="u-text">
+        <span>created with</span>
+      </p>
+      <a class="u-link" href="" target="_blank">
+        <span>Website Builder Software</span>
+      </a>. 
+    </section>
+  <script src="{% static 'jquery/jquery.min.js' %}"></script>
+    <script type="application/javascript" src="{% static 'js/jquery.formset.js' %}"></script>
+
+    <script>
+        //$(document).ready(function () {
+            //$(document).on('submit', 'form', function (e) {
+                //$(this).find('button').attr('disabled', 'disabled');
+            //});
+        //});
+
+        $('.user_skills').formset({
+            addText: 'Add Skill',
+            addCssClass: 'btn btn-primary',
+            deleteCssClass: 'btn btn-danger fa fa-trash bg-red formset-delete-btn',
+            deleteText: '',
+            prefix: 'skills_set',
+            formCssClass: 'skill-inline-form',
+        });
+        $('.user_professional_expr').formset({
+            addText: 'Add Skill',
+            addCssClass: 'btn btn-primary',
+            deleteCssClass: 'btn btn-danger fa fa-trash bg-red formset-delete-btn',
+            deleteText: '',
+            prefix: 'skills_set',
+            formCssClass: 'skill-inline-form',
+        });
+        $('.user_education').formset({
+            addText: 'Add Skill',
+            addCssClass: 'btn btn-primary',
+            deleteCssClass: 'btn btn-danger fa fa-trash bg-red formset-delete-btn',
+            deleteText: '',
+            prefix: 'skills_set',
+            formCssClass: 'skill-inline-form',
+        });
+        $('.user_projects').formset({
+            addText: 'Add Skill',
+            addCssClass: 'btn btn-primary',
+            deleteCssClass: 'btn btn-danger fa fa-trash bg-red formset-delete-btn',
+            deleteText: '',
+            prefix: 'skills_set',
+            formCssClass: 'skill-inline-form',
+        });
+        $('.user_language').formset({
+            addText: 'Add Skill',
+            addCssClass: 'btn btn-primary',
+            deleteCssClass: 'btn btn-danger fa fa-trash bg-red formset-delete-btn',
+            deleteText: '',
+            prefix: 'skills_set',
+            formCssClass: 'skill-inline-form',
+        });
+        $('.user_link').formset({
+            addText: 'Add Skill',
+            addCssClass: 'btn btn-primary',
+            deleteCssClass: 'btn btn-danger fa fa-trash bg-red formset-delete-btn',
+            deleteText: '',
+            prefix: 'skills_set',
+            formCssClass: 'skill-inline-form',
+        });
+    </script>
+  </body>
+</html>

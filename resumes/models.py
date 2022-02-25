@@ -22,7 +22,7 @@ class Skills(Base):
         verbose_name_plural = "Skills"
 
     def __str__(self):
-        return self.skill_name or self.skill_id
+        return self.skill_name
 
 
 class UserProfessionalExpr(models.Model):
