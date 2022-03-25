@@ -20,7 +20,7 @@ class Country(Base):
         verbose_name_plural = "Countries"
 
     def __str__(self):
-        return self.name or self.id
+        return self.name
 
 
 class State(Base):
@@ -46,7 +46,7 @@ class State(Base):
         verbose_name_plural = "States"
 
     def __str__(self):
-        return self.name or self.id
+        return self.name
 
 
 class City(Base):
@@ -66,7 +66,6 @@ class City(Base):
         db_table = 'cities'
         verbose_name_plural = "Cities"
 
-    def __str__(self):
-        if self.name:
-            return self.name
-        return str(self.pk)
+    # def __str__(self):
+    #     return self.name
+

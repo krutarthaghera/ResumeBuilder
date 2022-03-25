@@ -7,7 +7,7 @@ from django.views.generic import TemplateView
 
 from core.models import User, State
 from resumes.forms.userLink import LinkFormSet
-from resumes.models import Skills, UserProfessionalExpr, UserEducation, Language, UserLink, UserProjects
+from resumes.models import Skills, UserProfessionalExpr, UserEducation, Language, UserLink, UserProjects, Templates
 from resumes.forms import *
 
 from django.views.generic.edit import CreateView, UpdateView, FormView
@@ -154,8 +154,10 @@ class CreateProfileView(CreateView):
         user_projects = context['user_projects']
         user_language = context['user_language']
         user_link = context['user_link']
+
         with transaction.atomic():
             form.instance.created_by = self.request.user
+            form.instance.user = self.request.user
             self.object = form.save()
 
             if user_skills.is_valid():

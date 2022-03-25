@@ -10,11 +10,6 @@ class SkillForm(forms.ModelForm):
         model = Skills
         fields = ('skill_name', 'skill_level')
 
-        # widgets = {
-        #     'skill_name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter Skill'}),
-        #     'skill_level': forms.Select(attrs={'class': 'form-control select2'}),
-        # }
-
 
 SkillFormSet = inlineformset_factory(
     User,

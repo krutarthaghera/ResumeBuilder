@@ -10,12 +10,6 @@ class LanguageForm(forms.ModelForm):
         model = Language
         fields = ('language', 'level')
 
-    # widgets = {
-    #     'language': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Add Language'}),
-    #     'level': forms.Select(attrs={'class': 'form-control select2'}),
-    #
-    # }
-
 
 LanguageFormSet = inlineformset_factory(
     User,

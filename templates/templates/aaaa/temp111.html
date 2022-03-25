@@ -15,194 +15,189 @@
     <link rel="stylesheet" href="{% static "css/Home.css" %}" media="screen">
 
       <style>
-          .cv {
-  background-color: #fff;
-  border-top: 5px solid $primary-color;
-  max-width: 992px;
-  margin-right: auto;
-  margin-left: auto;
-  padding: 30px 15px;
-  box-shadow: 0px 0px 40px -10px rgba(0, 0, 0, 0.3);
+          * {
+  font-family: "Lato", sans-serif;
 }
 
-.cv-header {
-  margin-bottom: 50px;
+/* -------- HEADER -------- */
+/*--------------------------*/
+
+.container.header {
+  margin-top: 20px;
+/*   display: flex; */
+/*   justify-content: center; */
+/*  apparently Codepen does not support display flex, on original project it works perfectly. Therefore, there will be some imperfections  */
 }
 
-
-body.u-body.u-xl-mode {
-    background-color: #ddd;
+.photo {
+  z-index: 1;
+  margin-right: -13%;
 }
 
-.u-header {
-    background-color: #fff;
+img.perfil-photo {
+  width: 230px;
+  border-radius: 50%;
+  border: 10px solid #fff;
 }
 
-.card {
-    box-shadow: 0 0 1px rgb(0 0 0 / 13%), 0 1px 3px rgb(0 0 0 / 20%);
-    margin-bottom: 1rem;
-    margin-top: 20px;
-    margin-left: 30px;
+.title-name {
+  background-color: #eee;
+  height: 210px;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2em 0 8em;
 }
 
-.cv-header__img {
-  width: 72px;
-  height: 72px;
-  border-radius: 100%;
-  margin-right: 15px;
-  display: none;
+.title-name h1 {
+  font-family:'Lobster', cursive;
+  font-size: 4em;
+  letter-spacing: .02em;
 }
 
+.title-name h3 {
+  color: #ff6c00;
+  letter-spacing: .05em;
+  margin-top: 0;
+}
 
-.cv-header__text-container {
-  text-align: left;
+/* -------- GENERAL CONTENT -------- */
+/*--------------------------*/
+
+.container.content {
+  margin-top: 5px;
+}
+
+i.fa {
+  color: #ff6c00;
+  font-size: 25px;
+  line-height: 120%;
   vertical-align: middle;
-  display: inline-block;
+  margin-top: -4px;
 }
 
-.cv-header__name {
-  font-size: 24px;
-  font-weight: 600;
-  margin-bottom: 0;
+/* -------- EXPERIENCE CONTENT -------- */
+/*--------------------------*/
+
+.table.experience td {
+  padding: 20px;
 }
 
-.cv-header__name--phonetic {
-  color: #ababab;
-  font-style: italic;
+td.year {
+  font-size: 12px;
 }
 
-.cv-header__job-title {
-  color: #ababab;
-  font-size: 18px;
-  margin-bottom: 0;
+/* -------- RIGHT SIDEBAR -------- */
+/*--------------------------*/
+
+.side-info {
+  border-left: 1px solid #eee;
 }
 
-.cv-section {
-  border-bottom: 1px solid #eee;
-  padding-bottom: 50px;
-  margin-bottom: 50px;
+.contact,
+.skills,
+.about {
+  margin-left: 10px;
 }
 
-.cv-section__title {
-  font-size: 22px;
-  font-weight: 600;
-  margin-bottom: 5px;
+.skills ul {
+  list-style-type: none;
+  margin: 5px 0 0 0;
+  padding-left: 0;
+}
 
-  .fa, .fas {
-    margin-right: 2px;
+.skills ul li {
+  margin-bottom: 3px;
+}
+
+#level .fa {
+  font-size: 14px;
+  margin-right: 2px;
+}
+
+#development {
+  border-right: 2px solid #eee;
+}
+
+.about > p {
+  line-height: 1.5;
+}
+
+/* -------- FOOTER -------- */
+/*--------------------------*/
+.row.footer {
+  margin-top: 10px;
+}
+
+.footer p{
+  font-size: 14px;
+}
+
+/*-------- MEDIA QUERIES-------- */
+/*------- as a small project, I've decided to add with the style.css ---------*/
+
+@media only screen and (max-width: 1200px) {
+
+  .title-name h1 {
+    font-size: 3.2em;
+    padding-left: 0.5em;
   }
 }
 
-.cv-section__wrapper {
-  transition: all .15s ease;
-}
+@media only screen and (max-width: 991px) {
 
-.cv-section__experience {
-  margin-bottom: 25px;
-}
-
-.cv-section__role,
-.cv-section__period,
-.cv-section__description {
-  font-size: 18px;
-  margin-bottom: 0;
-}
-
-.cv-section__role {
-  font-weight: 600;
-}
-
-.cv-section__period {
-  color: #ababab;
-}
-
-// sidebar section
-.cv-sidebar-section {
-  margin-bottom: 20px;
-}
-
-.cv-sidebar-section__title, {
-  font-size: 22px;
-  font-weight: 600;
-  margin-bottom: 5px;
-}
-
-.cv-sidebar-section__description {
-  font-size: 18px;
-  margin-bottom: 0;
-}
-
-// media queries
-
-@media only screen and (min-width: 400px) {
-
-  .cv-header__img {
-    display: inline-block;
+  .container.header .row {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
   }
 
+  .photo {
+    margin-right: 0;
+  }
+
+  img.perfil-photo {
+    width: 205px;
+    border: 10px solid #eee;
+    margin-bottom: 1em;
+  }
+
+  .title-name {
+    height: 140px;
+    padding: 0 2em;
+  }
+
+  .title-name h1 {
+    font-size: 3.2em;
+  }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (max-width: 497px) {
 
-  body {
-    background-color: $primary-color;
+  .photo {
+    max-width: 319px;
   }
 
-  .cv-header__img {
-    width: 90px;
-    height: 90px;
-    border-radius: 100%;
+  img.perfil-photo {
+    width: 150px;
   }
 
-  .cv-section {
-    border-bottom: none;
-    padding-bottom: 0;
-
-    &:hover {
-      .cv-section__wrapper {
-        border-left-color: $primary-color;
-      }
-    }
+  .title-name h1 {
+    font-size: 2em;
+    padding-left: 0;
   }
 
-  .cv-section__title {
-    margin-bottom: 20px;
-
-    .fa, .fas {
-      margin-right: 9px;
-    }
+  .title-name h3 {
+    font-size: 1.2em;
   }
 
-  .cv-section__wrapper {
-    border-left: 2px solid #eee;
-    padding-left: 40px;
-    padding-right: 40px;
+  .title-name {
+    height: 110px;
   }
-
 }
-
-@media only screen and (min-width: 992px) {
-
-  .cv {
-    border-top: none;
-    border-radius: 2px;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    padding: 70px 50px;
-  }
-
-}
-
-
-@media print {
-
-  .cv {
-    border-top: none;
-  }
-
-}
-
-</style>
+      </style>
 </head>
 
 <body class="u-body u-xl-mode">
@@ -299,113 +294,172 @@ body.u-body.u-xl-mode {
           </div>
        </div>
        <div class="col-md-7">
-        <div class="cv" id="cv">
-          <div class="container-fluid">
-             <div class="row">
-                <div class="col-md-8">
-                   <!-- header -->
-                   <header class="cv-header">
-                      <img class="cv-header__img" src="https://selcukcura.com/wp-content/themes/selfolio-2018/img/profile-img/selcuk-cura-young.jpg" data-zoomable>
-                      <div class="cv-header__text-container">
-                         <h1 class="cv-header__name"><span class="fname"></span> <span class="lname"></span></h1>
-                         <p class="cv-header__job-title">Front-end developer</p>
-                      </div>
-                   </header>
-                   <!-- content -->
-                   <section class="cv-section">
-                      <h2 class="cv-section__title"><i class="fas fa-user fa-fw"></i> Profile</h2>
-                      <div class="cv-section__wrapper">
-                         <p class="cv-section__description about"></p>
-                      </div>
-                   </section>
-                   <!-- experience -->
-                   <section class="cv-section">
-                      <h2 class="cv-section__title"><i class="fas fa-briefcase fa-fw"></i> Experience</h2>
-                      <div class="cv-section__wrapper">
-                         <!-- freelance -->
-                         <div class="cv-section__experience">
-                            <p class="cv-section__role jobtitle"> </p>
-                            <p class="cv-section__role company"> </p>
-                            <p class="cv-section__role cityy"> </p>
-                            <p class="cv-section__period"> </p>
-                            <p class="cv-section__description description"> </p>
-                         </div>
-                         <!-- undertone -->
-{#                         <div class="cv-section__experience">#}
-{#                            <p class="cv-section__role">Undertone, Advertising Agency – Creative Developer</p>#}
-{#                            <p class="cv-section__period">June 2017 – January 2018</p>#}
-{#                            <p class="cv-section__description">Development of various high-impact adverts for mobile and desktop platforms.</p>#}
-{#                         </div>#}
-{#                         <!-- doner -->#}
-{#                         <div class="cv-section__experience">#}
-{#                            <p class="cv-section__role">Doner, Advertising Agency – Front-end Developer</p>#}
-{#                            <p class="cv-section__period">June 2015 – June 2017</p>#}
-{#                            <p class="cv-section__description">Development of the agency’s global website and other internal projects, built and maintained banner adverts and microsites and helped improve workflows within the dev team.</p>#}
-{#                         </div>#}
-                      </div>
-                   </section>
-                   <!-- education -->
-                   <section class="cv-section">
-                      <h2 class="cv-section__title"><i class="fas fa-graduation-cap fa-fw"></i> Education</h2>
-                      <div class="cv-section__wrapper">
-                         <!-- ravensbourne -->
-                         <div class="cv-section__experience">
-                            <p class="cv-section__role institutename"></p>
-                            <p class="cv-section__period"></p>
-                            <p class="cv-section__description edudescription"></p>
-                         </div>
-                         <!-- undertone -->
-{#                         <div class="cv-section__experience">#}
-{#                            <p class="cv-section__role">Tower Hamlets College – Art & Design (Interactive Media) BTEC & Media Studies</p>#}
-{#                            <p class="cv-section__period">2010 – 2012</p>#}
-{#                            <p class="cv-section__description">Distinction, Merit, Merit & C.</p>#}
-{#                         </div>#}
-{#                         <!-- doner -->#}
-{#                         <div class="cv-section__experience">#}
-{#                            <p class="cv-section__role">Langdon Park School – Graphics, Geography & History</p>#}
-{#                            <p class="cv-section__period">2005 – 2010</p>#}
-{#                            <p class="cv-section__description">13 GCSEs at grades A*-C including English, Maths and Science.</p>#}
-{#                         </div>#}
-                      </div>
-                   </section>
-                </div>
-                <!-- sidebar -->
-                <aside class="col-md-4 cv-sidebar">
-                   <!-- details -->
-                   <section class="cv-sidebar-section">
-                      <h2 class="cv-sidebar-section__title">Details</h2>
-                      <p class="cv-sidebar-section__description country"></p>
-                      <p class="cv-sidebar-section__description state"> </p>
-                        <br>
-                         <a href="tel:0-123-456-7890" class="phone" rel="nofollow"></a> <br>
-                         <a href="mailto:example@selcukcura.com" class="email" rel="nofollow"></a> <br>
+        <div>
 
+    <!--  ******* HEADER ******* -->
+    <div class="container header">
+      <div class="row">
+        <div class="photo col-md-3 col-sm-12">
+          <img class="perfil-photo" src="https://via.placeholder.com/150" alt="Daniele Pastore">
+        </div>
+        <div class="title-name col-md-8 col-sm-12 fname">
+          <h1>Daniele Hazler Pastore</h1>
+          <h3>Junior Front-end Developer</h3>
+        </div>
+      </div>
+    </div>
+    <!-- ******* EXPERIENCE CONTENT******* -->
+    <div class="container content">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-1">
+          <h2><i class="fa fa-suitcase" aria-hidden="true"></i> Experience</h2>
+          <table class="table experience">
+            <th>Job</th>
+            <th>Year</th>
+            <tr>
+              <td>The Three Crowns (London/UK) waitress <br>
+                <ul>
+                  <li>One step back in order to be able to have more time for studies.</li>
+                </ul>
+              </td>
+              <td class="year">2017 till present</td>
+            </tr>
+            <tr>
+              <td>Sweet Thursday Pizzeria (London/UK) assistant manager <br>
+                <ul>
+                  <li>Business management - paper work, banking and payments</li>
+                  <li>Recruitment, evaluation and supervision of staff</li>
+                  <li>Customer service: sales, reservations or any issue</li>
+                  <li>Stock organization</li>
+                </ul>
+              </td>
+              <td class="year">2015 till September 2017</td>
+            </tr>
+            <tr>
+              <td>Marettimo Residence (Egadi Project - Italy) assistant manager<br>
+                <ul>
+                  <li>Welcoming customer, presenting the structure and apartments.</li>
+                  <li>Managing the staff and organization.</li>
+                  <li>Resolution of small general issues</li>
+                </ul>
+              </td>
+              <td class="year">Summer 2014</td>
+            </tr>
+            <tr>
+              <td>Project Manager - Fashion<br>
+                <ul>
+                  <li>Organization of the procedures of planning and monitoring the photoshoot.</li>
+                  <li>Responsible for casting models, photographers, make-up artists, etc.</li>
+                  <li>Supervision of the logistic and everything needed to carry out the campaign like: finding location, accommodation, catering.</li>
+                </ul>
+              </td>
+              <td class="year">2010 - 2014</td>
+            </tr>
+          </table>
 
-                   </section>
-                   <!-- skills -->
-                   <section class="cv-sidebar-section">
-                      <h2 class="cv-sidebar-section__title">Skills</h2>
-                      <p class="cv-sidebar-section__description skill"></p>
-                   </section>
-                   <!-- tools -->
-                   <section class="cv-sidebar-section">
-                      <h2 class="cv-sidebar-section__title">Projects</h2>
-{#                      <p class="cv-sidebar-section__description">MacOS, Windows, Atom, Sketch, Photoshop, Illustrator, MAMP, Sourcetree, Bitbucket, Google Analytics.</p>#}
-                   </section>
-                   <!-- interests -->
-                   <section class="cv-sidebar-section">
-                      <h2 class="cv-sidebar-section__title">Interests</h2>
-{#                      <p class="cv-sidebar-section__description">Minimalism, Animation, Concept Development, Responsive Design, UI Design, UX Design, Interaction Design, Photography.</p>#}
-                   </section>
-                   <!-- languages -->
-                   <section class="cv-sidebar-section">
-                      <h2 class="cv-sidebar-section__title">Languages</h2>
-                      <p class="cv-sidebar-section__description language"></p>
-                   </section>
-                </aside>
-             </div>
+          <h2><i class="fa fa-graduation-cap" aria-hidden="true"></i> Education</h2>
+          <p><strong>Elatt - Professional Training & Coaching </strong><br> HTML, CSS &amp; Wordpress – Nov 2017 till present</p>
+          <p><strong>Udacity - Google Challenge</strong><br> HTML, CSS, JavaScript &amp; jQuery – Nov 2017 till present</p>
+          <p><strong>SuperHi</strong><br> HTML, CSS, JavaScript &amp; jQuery – 2017</p>
+          <p><strong>Codecademy PRO Intensive</strong><br> HTML, CSS, JavaScript &amp; Bootstrap – 2017</p>
+          <p><strong>Udemy</strong><br> The Web Developer Bootcamp – 2017</p>
+          <p><strong>Graphic Design (48hrs) / Elite Training School</strong><br> (Bal. Camboriú – SC / Brazil) – 2011</p>
+          <p><strong>Bachelor in Industrial Design / UNIVALI – University Of Itajaí</strong><br> (Bal. Camboriú – SC / Brazil) – 2006/1</p>
+        </div>
+
+        <!-- ******* RIGHT SIDE BAR INFO ******* -->
+        <div class="col-md-4 side-info">
+          <div class="contact">
+            <h2><i class="fa fa-home" aria-hidden="true"></i> Contact</h2>
+            <p class="contact">1 Ask Me Road ∙ London ∙ N00 0NN <br>
+              Fone: 07779askme ∙ E-mail: askme@gmail.com<br>
+              ∙ Birth Place: Brazil
+            </p>
           </div>
-       </div>
+          <div class="skills">
+            <h2><i class="fa fa-wrench" aria-hidden="true"></i> Skills</h2>
+            <h3>Languages</h3>
+            <div class="row">
+              <div class="col-md-5 col-xs-6">
+                <ul>
+                  <li>Portuguese</li>
+                  <li>English</li>
+                  <li>Italian</li>
+                  <li>Spanish</li>
+                </ul>
+              </div>
+              <div class="col-md-7 col-xs-6">
+                <ul id="level">
+                  <li>
+                    <i class="fa fa-square" aria-hidden="true"></i>
+                    <i class="fa fa-square" aria-hidden="true"></i>
+                    <i class="fa fa-square" aria-hidden="true"></i>
+                    <i class="fa fa-square" aria-hidden="true"></i>
+                    <i class="fa fa-square" aria-hidden="true"></i>
+                  </li>
+                  <li>
+                    <i class="fa fa-square" aria-hidden="true"></i>
+                    <i class="fa fa-square" aria-hidden="true"></i>
+                    <i class="fa fa-square" aria-hidden="true"></i>
+                    <i class="fa fa-square" aria-hidden="true"></i>
+                    <i class="fa fa-square" aria-hidden="true"></i>
+                  </li>
+                  <li>
+                    <i class="fa fa-square" aria-hidden="true"></i>
+                    <i class="fa fa-square" aria-hidden="true"></i>
+                    <i class="fa fa-square" aria-hidden="true"></i>
+                    <i class="fa fa-square-o" aria-hidden="true"></i>
+                    <i class="fa fa-square-o" aria-hidden="true"></i>
+                  </li>
+                  <li>
+                    <i class="fa fa-square" aria-hidden="true"></i>
+                    <i class="fa fa-square" aria-hidden="true"></i>
+                    <i class="fa fa-square-o" aria-hidden="true"></i>
+                    <i class="fa fa-square-o" aria-hidden="true"></i>
+                    <i class="fa fa-square-o" aria-hidden="true"></i>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <h3>Development</h3>
+            <div class="row">
+              <div class="col-md-5 col-xs-6" id="development">
+                <ul>
+                  <li>HTML</li>
+                  <li>CSS3</li>
+                  <li>Bootstrap</li>
+                  <li>Git / Github</li>
+                </ul>
+              </div>
+              <div class="col-md-7 col-xs-6">
+                <ul>
+                  <li>JavaScript</li>
+                  <li>jQuery</li>
+                  <li>SASS</li>
+                  <li>Wordpress</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="about">
+              <h2><i class="fa fa-user" aria-hidden="true"></i> About Me</h2>
+              <p>I enjoy learning new skills and I am confident in working with different cultures and countries. I am energetic, outgoing and with excellent capacity to adapt to new challenges. As an active learner and strong team player I’m able to work in any diverse &amp; fast-paced environment and also take full responsibility for my own personal development. At the moment I am a developer autodidact updating my knowledge for my career change.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row footer">
+        <div class="col-md-11">
+          <blockquote class="blockquote-reverse">
+            <p>Far from what I once was but not yet what I'm going to be.</p>
+            <footer>Unknown</footer>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+
+        </div>
            <input type="button" class="btn btn-success" value="Print" onclick="asdf()">
        </div>
        </div> <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-bd2e">
@@ -519,14 +573,6 @@ body.u-body.u-xl-mode {
           $("#id_userprofessionalexpr_set-0-job_title").keyup(function(){
               var a =$("#id_userprofessionalexpr_set-0-job_title").val();
               $('.jobtitle').html(a);
-          });
-          $("#id_userprofessionalexpr_set-0-company").keyup(function(){
-              var a =$("#id_userprofessionalexpr_set-0-company").val();
-              $('.company').html(a);
-          });
-          $("#id_userprofessionalexpr_set-0-city").keyup(function(){
-              var a =$("#id_userprofessionalexpr_set-0-city").val();
-              $('.cityy').html(a);
           });
 
           $("#id_userprofessionalexpr_set-0-description").keyup(function(){

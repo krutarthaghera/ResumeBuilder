@@ -62,10 +62,10 @@ class User(AbstractUser):
     class Meta(AbstractUser.Meta):
         swappable = 'AUTH_USER_MODEL'
 
-    def __str__(self):
-        if self.first_name and self.last_name:
-            return str(self.first_name + " " + self.last_name)
-        return self.email
+    # def __str__(self):
+    #     if self.first_name and self.last_name:
+    #         return str(self.first_name + " " + self.last_name)
+    #     return self.email
 
 
 class SoftDeletionQuerySet(QuerySet):

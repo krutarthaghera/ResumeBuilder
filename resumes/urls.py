@@ -9,6 +9,7 @@ urlpatterns = [
     path('profiles/add/', CreateProfileView.as_view(), name='add_profile'),
     path('dashboard', DashboardView.as_view(), name='dashboard'),
     path('templates', Template1View.as_view(), name='templates'),
+    # path('ajax/load-states/', views.load_states(), name='ajax_load_states'),
 #     path('profiles/add_skill', CreateSkillView.as_view(), name='add_skill'),
 #     path('profiles/add_professionalexpr', CreateProfessionalExprView.as_view(), name='add_professionalexpr'),
 #     path('profiles/add_educationalexpr', CreateEducationExprView.as_view(), name='add_educationexpr'),
